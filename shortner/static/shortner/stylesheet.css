@@ -1,0 +1,28 @@
+fieldset {
+    background-color: #0c043a;
+    height: 150px;
+    width: 450px;
+    display: inline-block;
+    margin: 350px 0px 0px 650px;
+}
+
+#url {
+    height: 40px;
+    width: 315px;
+    margin-top: 50px;
+    font-size: 20px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+#button {
+    height: 40px;
+    width: 90px;
+    margin-top: 55px;
+    margin-left: 30px;
+    background-color: #0c35eb;
+    font-size: 15px;
+    border-radius: 7px;
+    color: #ffffff;
+
+}

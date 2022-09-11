@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="{% static 'shortner/stylesheet.css'%}">
+</head>
+
+<body>
+  <form action="{% url 'shortner:shorten_link' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+      <input type="text" name="url" id="url" placeholder="Enter a Link to be shortened">
+      <button type="submit" value="Short" id="button"> shorten</button>
+      <p style="color:#ffffff ; font-size:8px; text-align: center;">By clicking SHORTEN, you are agreeing to Bitly’s
+        <a href="https://bitly.com/pages/terms-of-service"> <u> Terms of Service</u></a>, <a
+          href="https://bitly.com/pages/privacy"><u>Privacy Policy</u></a>, and <a
+          href="https://bitly.com/pages/acceptable-use"><u>Acceptable Use Policy</u></a>
+      </p>
+    </fieldset>
+  </form>
+</body>
+
+</html>
