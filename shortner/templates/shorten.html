@@ -3,23 +3,23 @@
 
 <html>
 
-<head>
-    <link rel="stylesheet" href="{% static 'shortner/stylesheet.css'%}">
-</head>
+    <head>
+        <link rel="stylesheet" href="{% static 'shortner/stylesheet.css'%}">
+    </head>
 
-<body>
-    {% csrf_token %}
-    <fieldset>
-        <input type="text" value="{{shortened_url}}" id="url">
-        <button onclick="copy()" id="button"> copy link</button>
-    </fieldset>
-    <script>
-        function copy() {
-            var copyText = document.getElementById("url");
-            copyText.select();
-            navigator.clipboard.writeText(copyText.value);
-        }
-    </script>
-</body>
+    <body>
+        {% csrf_token %}
+        <fieldset>
+            <input type="text" value="{{shortened_url}}" id="short-url">
+            <button onclick="copy()" id="button"> copy link</button>
+        </fieldset>
+        <script>
+            function copy() {
+                var copyText = document.getElementById("short-url");
+                copyText.select();
+                navigator.clipboard.writeText(copyText.value);
+            }
+        </script>
+    </body>
 
 </html>

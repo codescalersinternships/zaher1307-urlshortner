@@ -1,12 +1,17 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 fieldset {
     background-color: #0c043a;
     height: 150px;
     width: 450px;
     display: inline-block;
-    margin: 350px 0px 0px 650px;
 }
 
-#url {
+#url, #short-url {
     height: 40px;
     width: 315px;
     margin-top: 50px;
@@ -24,5 +29,4 @@ fieldset {
     font-size: 15px;
     border-radius: 7px;
     color: #ffffff;
-
 }
