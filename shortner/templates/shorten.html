@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <form action="{% url 'shortner:shorten_link' %}" method="post">
+    <form method="post">
         {% csrf_token %}
         <fieldset id="f-url">
             <input type="text" name="url" value="{{url}}" id="url" placeholder="Enter a Link to be shortened">
-            <button type="submit" value="Short" id="button"> shorten</button>
+            <button hx-post="{% url 'shortner:shorten_link' %}" type="submit" value="Short" id="button"> shorten</button>
             <p style="color:#ffffff ; font-size:8px; text-align: center;">By clicking SHORTEN, you are agreeing to
                 Bitly’s
                 <a href="https://bitly.com/pages/terms-of-service"> <u> Terms of Service</u></a>,
