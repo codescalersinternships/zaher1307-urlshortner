@@ -3,23 +3,38 @@
 
 <html>
 
-    <head>
-        <link rel="stylesheet" href="{% static 'shortner/stylesheet.css'%}">
-    </head>
+<head>
+    <link rel="stylesheet" href="{% static 'shortner/stylesheet.css'%}">
+    <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+</head>
 
-    <body>
+<body>
+    <form action="{% url 'shortner:shorten_link' %}" method="post">
         {% csrf_token %}
-        <fieldset>
-            <input type="text" value="{{shortened_url}}" id="short-url">
-            <button onclick="copy()" id="button"> copy link</button>
+        <fieldset id="f-url">
+            <input type="text" name="url" value="{{url}}" id="url" placeholder="Enter a Link to be shortened">
+            <button type="submit" value="Short" id="button"> shorten</button>
+            <p style="color:#ffffff ; font-size:8px; text-align: center;">By clicking SHORTEN, you are agreeing to
+                Bitly’s
+                <a href="https://bitly.com/pages/terms-of-service"> <u> Terms of Service</u></a>,
+                <a href="https://bitly.com/pages/privacy"><u>Privacy Policy</u></a>, and
+                <a href="https://bitly.com/pages/acceptable-use"><u>Acceptable Use Policy</u></a>
+            </p>
         </fieldset>
-        <script>
-            function copy() {
-                var copyText = document.getElementById("short-url");
-                copyText.select();
-                navigator.clipboard.writeText(copyText.value);
-            }
-        </script>
-    </body>
+
+    </form>
+    {% csrf_token %}
+    <fieldset id="fc-url">
+        <input type="text" name="shortened_url" value="{{shortened_url}}" id="copy-url">
+        <button onclick="copy()" id="copy-button"> copy link</button>
+    </fieldset>
+    <script>
+        function copy() {
+            var copyText = document.getElementById("copy-url");
+            copyText.select();
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+</body>
 
 </html>

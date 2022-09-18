@@ -4,14 +4,18 @@ body {
     justify-content: center;
     align-items: center;
 }
-fieldset {
+#f-url {
     background-color: #0c043a;
     height: 150px;
     width: 450px;
-    display: inline-block;
 }
-
-#url, #short-url {
+#fc-url {
+    background-color: #0c043a;
+    width: 450px;
+    height: 150px;
+}
+#url,
+#copy-url {
     height: 40px;
     width: 315px;
     margin-top: 50px;
@@ -19,8 +23,8 @@ fieldset {
     border-radius: 7px;
     text-align: center;
 }
-
-#button {
+#button,
+#copy-button {
     height: 40px;
     width: 90px;
     margin-top: 55px;
